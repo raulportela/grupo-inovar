@@ -35,10 +35,18 @@ button {
 .atlas-cta-wide {
     width: 100%;
 }
-
+.about-us{
+    background-image: url("bg-sn.jpg");
+    background-repeat: no-repeat;
+background-size: 100%;
+}
 .cta-green {
     background: #0abde3;
     color: #192440;
+}
+
+.servicos img{
+    margin: 10px;
 }
 
 .cta-green:hover {
