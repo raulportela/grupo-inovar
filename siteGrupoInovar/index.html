@@ -14,6 +14,10 @@
     <link rel="stylesheet" href="css/cabecalho.css">
     <!-- font-awesome -->
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <!-- swipper -->
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+
+
 
 
     <!-- AOS -->
@@ -51,12 +55,69 @@
                 diversos seguimentos.
             </p>
             <a href="#" data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true"
+                class="btn my-4 font-weight-bold atlas-cta cta-blue">Saiba sobre nós</a>
+            <a href="#" data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true"
                 class="btn my-4 font-weight-bold atlas-cta cta-green">Conheça nossas areas</a>
         </div>
     </div>
-    <!-- three-blcok -->
+    <!--Sobre nós-->
+
+    <div class="container my-5 py-2 text-center" id="price-table">
+        <h2 class="text-center font-weight-bold d-block mb-3">Não conhece o Grupo Inovar? Conheça sobre nós...</h2>
+        <div class="row">
+            <p class="my-4">
+                O Grupo Inovar é uma das mais tradicionais referências em
+                prestação de serviços para condomínios residenciais, condomínios
+                comerciais, indústrias, escritórios, clínicas e outros. Através de uma
+                filosofia dinâmica, nosso objetivo é fazer com que nossos parceiros se
+                destaquem em seus serviços.
+            </p>
+        </div>
+        <a href="#" class="btn my-4 font-weight-bold atlas-cta cta-green">Conheça os serviços que prestamos</a>
+    </div>
+
+    <!--Banners-->
+
+    <div class="jumbotron jumbotron-fluid feature" id="feature-first">
+        <div class="container my-5">
+            <div class="row justify-content-between text-center text-md-left">
+                <div data-aos="fade-right" data-aos-duration="1000" data-aos-once="true" class="col-md-6">
+                    <h2 class="font-weight-bold texto-decorationn">Deseja ingressar no mercado de trabalho?</h2>
+                    <p class="my-4 texto-decorationn">Aqui temos uma oportunidade pra você.
+                        <br>
+                    </p>
+                    <a href="#" class="btn my-4 font-weight-bold atlas-cta cta-blue"> Trabalhe conosco</a>
+                </div>
+                <div data-aos="fade-left" data-aos-duration="1000" data-aos-once="true"
+                    class="col-md-6 align-self-center">
+                    <img src="img/feature-1.png" alt="Take a look inside" class="mx-auto d-block">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- feature (green background) -->
+    <div class="jumbotron jumbotron-fluid feature" id="feature-last">
+        <div class="container">
+            <div class="row justify-content-between text-center text-md-left">
+                <div data-aos="fade-left" data-aos-duration="1000" data-aos-once="true" class="col-md-6 flex-md-last">
+                    <h2 class="font-weight-bold">Contrate nossos serviços</h2>
+                    <p class="my-4">
+                        Será um prazer atender você e sanar sua necessidade.
+                        <br> Deixe o pesado com o Grupo Inovar.
+                    </p>
+                    <a href="#" class="btn my-4 font-weight-bold atlas-cta cta-blue">Contate-nos</a>
+                </div>
+                <div data-aos="fade-right" data-aos-duration="1000" data-aos-once="true"
+                    class="col-md-6 align-self-center flex-md-first">
+                    <img src="img/feature-2.png" alt="Safe and reliable" class="mx-auto d-block">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Serviços-->
     <div class="container my-5 py-2">
-        <h2 class="text-center font-weight-bold my-5">Conheça nossos serviços</h2>
+        <h2 class="text-center font-weight-bold my-5">Nossas areas de atuação</h2>
         <div class="row">
             <div data-aos="fade-up" data-aos-delay="0" data-aos-duration="1000" data-aos-once="true"
                 class="col-md-4 text-center">
@@ -99,7 +160,7 @@
 
         </div>
     </div>
-    <!-- feature (skew background) -->
+    <!-- feature (skew background) 
     <div class="jumbotron jumbotron-fluid feature" id="feature-first">
         <div class="container my-5">
             <div class="row justify-content-between text-center text-md-left">
@@ -117,7 +178,7 @@
             </div>
         </div>
     </div>
-    <!-- feature (green background) -->
+     feature (green background) 
     <div class="jumbotron jumbotron-fluid feature" id="feature-last">
         <div class="container">
             <div class="row justify-content-between text-center text-md-left">
@@ -136,8 +197,8 @@
             </div>
         </div>
     </div>
-
-
+-->
+    <!--
     <div class="container my-5 py-2 text-center" id="price-table">
         <h2 class="text-center font-weight-bold d-block mb-3">Não conhece o Grupo Inovar? Conheça sobre nós...</h2>
         <div class="row">
@@ -151,20 +212,124 @@
         </div>
         <a href="#" class="btn my-4 font-weight-bold atlas-cta cta-green">Conheça os serviços que prestamos</a>
     </div>
-
+    -->
     <!-- client -->
-    <div class="jumbotron text-center">
-        <div class="container my-5 py-2">
-            <div class="row servicos">
-                <img src="img/img-serv-1.jpg" alt="..." class="rounded">
-                <img src="img/img-serv-1.jpg" alt="..." class="rounded">
-                <img src="img/img-serv-1.jpg" alt="..." class="rounded">
-                <img src="img/img-serv-1.jpg" alt="..." class="rounded">
-                <img src="img/img-serv-1.jpg" alt="..." class="rounded">
-                <img src="img/img-serv-1.jpg" alt="..." class="rounded">
+    <div class="jumbotron">
+        <div class="slide-container swiper">
+            <div class="slide-content">
+                <div class="card-wrapper swiper-wrapper">
+                    <div class="card swiper-slide">
+                        <div class="image-content">
+                            <span class="overlay"></span>
+                            <div class="card-image">
+                                <img src="img/quadrado-exemple.jpg" alt="" class="card-img">
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h2 class="name">Jardinagem 1</h2>
+                            <p class="description">Sou jardineiroooo Sou jardineiroooo </p>
+                            <button class="buttoncard">Ver mais</button>
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="image-content">
+                            <span class="overlay"></span>
+                            <div class="card-image">
+                                <img src="img/quadrado-exemple.jpg" alt="" class="card-img">
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h2 class="name">Jardinagem 2</h2>
+                            <p class="description">Sou jardineiroooo Sou jardineiroooo </p>
+                            <button class="buttoncard">Ver mais</button>
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="image-content">
+                            <span class="overlay"></span>
+                            <div class="card-image">
+                                <img src="img/quadrado-exemple.jpg" alt="" class="card-img">
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h2 class="name">Jardinagem 3</h2>
+                            <p class="description">Sou jardineiroooo Sou jardineiroooo </p>
+                            <button class="buttoncard">Ver mais</button>
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="image-content">
+                            <span class="overlay"></span>
+                            <div class="card-image">
+                                <img src="img/quadrado-exemple.jpg" alt="" class="card-img">
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h2 class="name">Jardinagem 4</h2>
+                            <p class="description">Sou jardineiroooo Sou jardineiroooo </p>
+                            <button class="buttoncard">Ver mais</button>
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="image-content">
+                            <span class="overlay"></span>
+                            <div class="card-image">
+                                <img src="img/quadrado-exemple.jpg" alt="" class="card-img">
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h2 class="name">Jardinagem 5</h2>
+                            <p class="description">Sou jardineiroooo Sou jardineiroooo </p>
+                            <button class="buttoncard">Ver mais</button>
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="image-content">
+                            <span class="overlay"></span>
+                            <div class="card-image">
+                                <img src="img/quadrado-exemple.jpg" alt="" class="card-img">
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h2 class="name">Jardinagem 6</h2>
+                            <p class="description">Sou jardineiroooo Sou jardineiroooo </p>
+                            <button class="buttoncard">Ver mais</button>
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="image-content">
+                            <span class="overlay"></span>
+                            <div class="card-image">
+                                <img src="img/quadrado-exemple.jpg" alt="" class="card-img">
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h2 class="name">Jardinagem 5</h2>
+                            <p class="description">Sou jardineiroooo Sou jardineiroooo </p>
+                            <button class="buttoncard">Ver mais</button>
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="image-content">
+                            <span class="overlay"></span>
+                            <div class="card-image">
+                                <img src="img/quadrado-exemple.jpg" alt="" class="card-img">
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h2 class="name">Jardinagem 6</h2>
+                            <p class="description">Sou jardineiroooo Sou jardineiroooo </p>
+                            <button class="buttoncard">Ver mais</button>
+                        </div>
+                    </div>
+                    
+                </div>
             </div>
-
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
         </div>
+
     </div>
     <!-- contact -->
     <div class="jumbotron jumbotron-fluid" id="contact" style="background-image: url(img/contact-bk.jpg);">
@@ -238,5 +403,10 @@
         });
     </script>
 </body>
+
+<!-- Swipper JS-->
+<script src="js/swiper-bundle.min.js"></script>
+<!-- JavaScript -->
+<script src="js/script.js"></script>
 
 </html>
