@@ -17,6 +17,8 @@
     <!-- swipper -->
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
 
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
 
 
 
@@ -66,6 +68,8 @@
 
 
 
+
+
     <!-- formulario -->
     <div class="fakebody">
         <div class="box">    
@@ -73,37 +77,122 @@
                 <img src="img/img-formulario.png" alt="">
             </div>
             <div class="form-box">
-                <h2>Criar Conta</h2>
-                <p>Já é um membro? <a href="#">Login</a></p>
+                <h2>Inscreva-se</h2>
+                <p>Para a vaga de <strong>Controlador de acesso</strong></p>
                 <form action="#">
+                    
+                    <div class="input-group">
+                        <input type="hidden" id="to" value="grupoinovar.sendemail@gmail.com" placeholder="Digite seu nome completo" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="hidden" id="subject" value="VAGA+ - CONTROLADOR DE ACESSO" placeholder="Digite seu nome completo" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="hidden" id="replyto" value="raul.p.p@hotmail.com" placeholder="Digite seu nome completo" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Dados Pessoais</label>
+                    </div>
                     <div class="input-group">
                         <label for="nome">Nome completo</label>
                         <input type="text" id="nome" placeholder="Digite seu nome completo" required>
                     </div>
-    
                     <div class="input-group">
-                        <label for="email">E-mail</label>
+                        <label for="idade">Insira idade</label>
+                        <input type="text" id="idade" placeholder="Digite sua idade" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="celular">Possui experiencia?</label>
+                        <p>Sim</p><input type="radio" name="radioquestion" id="experiencia" required>
+                        <p>Não</p><input type="radio" name="radioquestion" id="experiencia" required>
+
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <label>Dados de contato</label>
+                    </div>
+                    <div class="input-group">
+                        <label for="email">Insira Email</label>
                         <input type="text" id="email" placeholder="Digite seu e-mail" required>
                     </div>
     
                     <div class="input-group">
-                        <label for="telefone">E-mail</label>
-                        <input type="tel" id="telefone" placeholder="Digite seu telefone" required>
+                        <label for="celular">DDD + Celular</label>
+                        <input type="tel" id="celular" placeholder="Digite seu celular" required>
                     </div>
-    
-                    <div class="input-group w50">
-                        <label for="senha">Senha</label>
-                        <input type="password" id="senha" placeholder="Confirme a senha" required>
+
+                    
+                    <br>
+                    <div class="input-group">
+                        <label>Dados Residenciais</label>
                     </div>
-    
-                    <div class="input-group w50">
-                        <label for="Confirmarsenha">Confirmar Senha</label>
-                        <input type="password" id="Confirmarsenha" placeholder="Confirme a senha" required>
+                    
+                    <div class="input-group">
+                        <label for="rua">Insira Rua + N°</label>
+                        <input type="text" id="rua" placeholder="Digite sua rua e numero" required>
                     </div>
+                    
+                    <div class="input-group">
+                        <label for="bairro">Insira Bairro</label>
+                        <input type="text" id="bairro" placeholder="Digite seu bairro" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="cidade">Insira cidade</label>
+                        <input type="text" id="cidade" placeholder="Digite sua cidade" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="estado">Insira Estado</label>
+                        <input type="text" id="estado" placeholder="Digite seu estado" required>
+                    </div>
+                        
+                    
     
                     <div class="input-group">
-                        <button>Cadastrar</button>
+                        <button onclick="sendEmail();">Enviar Email</button>
                     </div>
+                    
+
+                    <script>
+                        function sendEmail(){
+                            (function(){
+                                emailjs.init("gHb7oESI6hhQ6adcO"); //Chave publica do EMAILJS
+                            })();
+
+                            var params = {
+
+                                //Esses dados não podem mudar
+                                to: document.querySelector("#to").value,
+                                sendername: document.querySelector("#nome").value,
+                                subject: document.querySelector("#subject").value,
+                                replyto: document.querySelector("#replyto").value,
+
+                                //Dados pessoais
+                                nome: document.querySelector("#nome").value,
+                                email: document.querySelector("#email").value,
+                                telefone: document.querySelector("#telefone").value,
+                                
+                                //dados de endereço
+                                rua: document.querySelector("#rua").value,
+                                bairro: document.querySelector("#bairro").value,
+                                cidade: document.querySelector("#cidade").value,
+                                estado: document.querySelector("#estado").value,
+
+
+
+                            };
+
+                            var serviceID = "service_xomalqp"; // Email Service ID
+                            var templateID = "template_ujj5adk"; // Email template ID
+
+                            emailjs.send(serviceID, templateID, params)
+                            .then(res => {
+                                alert("Insicrição para vaga feita com sucesso! Logo entraremos em contato com você.");
+                            })
+                            .catch();
+                        }
+                    </script>
     
                 </form>
     
