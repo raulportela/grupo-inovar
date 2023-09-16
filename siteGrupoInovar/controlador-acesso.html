@@ -82,11 +82,11 @@
                 <form action="#">
 
                     <div class="input-group">
-                        <input type="hidden" id="to" value="raul.p.p@hotmail.com" placeholder="Digite seu nome completo"
+                        <input type="hidden" id="to" value="grupoinovar.sendemail@gmail.com" placeholder="Digite seu nome completo"
                             required>
                     </div>
                     <div class="input-group">
-                        <input type="hidden" id="subject" value="VAGA+ - CONTROLADOR DE ACESSO"
+                        <input type="hidden" id="subject" value="CANDIDATO À VAGA - CONTROLADOR DE ACESSO"
                             placeholder="Digite seu nome completo" required>
                     </div>
                     <div class="input-group">
@@ -106,18 +106,18 @@
                     </div>
                     <div class="input-group">
                         <label for="genero">Insira Genero:</label>
-                        <select name="genero">
+                        <select name="genero" id="genero">
                             <option value="Selecione...">Selecione...</option>
                             <option value="Masculino">Masculino</option>
                             <option value="Feminino">Feminino</option>
                         </select>
                     </div>
                     <div class="input-group">
-                        <label for="experi">Possui experiencia?</label>
-                        <select name="experi">
+                        <label for="experiencia">Possui experiencia?</label>
+                        <select name="experiencia" id="experiencia">
                             <option value="Selecione...">Selecione...</option>
-                            <option value="sim">Sim</option>
-                            <option value="nao">Não</option>
+                            <option value="Sim">Sim</option>
+                            <option value="Nao">Não</option>
                         </select>
                     </div>
                     <br>
@@ -174,10 +174,16 @@
 
 
                     <script>
-                        function sendEmail() {
+                        function sendEmailInscricao() {
                             (function () {
                                 emailjs.init("gHb7oESI6hhQ6adcO"); //Chave publica do EMAILJS
                             })();
+
+                            const selectGenero = document.querySelector("#genero");
+                            var valorGenero = selectGenero.value;
+                            const selectExperiencia = document.querySelector("#experiencia");
+                            var valorExperiencia = selectExperiencia.value;
+                            console.log(valorExperiencia, valorGenero)
 
                             var params = {
 
@@ -189,8 +195,14 @@
 
                                 //Dados pessoais
                                 nome: document.querySelector("#nome").value,
+                                idade: document.querySelector("#idade").value,
+                                genero: valorGenero,
+                                experiencia: valorExperiencia,
+
+                                //Dados de contato
                                 email: document.querySelector("#email").value,
-                                telefone: document.querySelector("#telefone").value,
+                                celular: document.querySelector("#celular").value,
+
 
                                 //dados de endereço
                                 rua: document.querySelector("#rua").value,
@@ -198,6 +210,8 @@
                                 cidade: document.querySelector("#cidade").value,
                                 estado: document.querySelector("#estado").value,
 
+                                //Mensagem adicional
+                                messageadd: document.querySelector("#messageadd").value,
 
 
                             };
