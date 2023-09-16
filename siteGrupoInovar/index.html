@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -16,30 +16,23 @@
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
     <!-- swipper -->
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
-
-
-
-
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <!-- AOS -->
     <link rel="stylesheet" href="css/aos.css">
 </head>
 
 <body>
-
-
     <!-- banner -->
     <div class="jumbotron jumbotron-fluid" id="banner" style="background-image: url(img/banner-bk.jpg);">
         <div class="container text-center text-md-left">
             <header>
                 <div class="row justify-content-between">
                     <div class="col-2">
-                        <img src="img/logo.png" alt="logo">
+                        <a href="index.html">
+                            <img src="img/logo.png" alt="logo">
+                        </a>
                     </div>
-                    <!-- 
-                    <div class="col-6 align-self-center text-right">
-                        <a href="#" class="text-white lead buttStyle">Serviços</a>
-                    </div>
-                    -->
                 </div>
             </header>
             <h1 data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true"
@@ -54,15 +47,14 @@
                 Atuamos de forma eficaz em condomínios, residencias, industrias, instituições de ensino e empresas
                 diversos seguimentos.
             </p>
-            <a href="#" data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true"
+            <a href="#sobre-nos" data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true"
                 class="btn my-4 font-weight-bold atlas-cta cta-blue">Saiba sobre nós</a>
-            <a href="#" data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true"
-                class="btn my-4 font-weight-bold atlas-cta cta-green">Conheça nossas areas</a>
+            <a href="#areas-atuacao" data-aos="fade" data-aos-easing="linear" data-aos-duration="1000"
+                data-aos-once="true" class="btn my-4 font-weight-bold atlas-cta cta-green">Conheça nossas areas</a>
         </div>
     </div>
     <!--Sobre nós-->
-
-    <div class="container my-5 py-2 text-center" id="price-table">
+    <div class="container my-5 py-2 text-center" id="sobre-nos">
         <h2 class="text-center font-weight-bold d-block mb-3">Não conhece o Grupo Inovar? Conheça sobre nós...</h2>
         <div class="row">
             <p class="my-4">
@@ -73,11 +65,10 @@
                 destaquem em seus serviços.
             </p>
         </div>
-        <a href="#" class="btn my-4 font-weight-bold atlas-cta cta-green">Conheça os serviços que prestamos</a>
+        <a href="#areas-atuacao" class="btn my-4 font-weight-bold atlas-cta cta-green">Conheça os serviços que
+            prestamos</a>
     </div>
-
     <!--Banners-->
-
     <div class="jumbotron jumbotron-fluid feature" id="feature-first">
         <div class="container my-5">
             <div class="row justify-content-between text-center text-md-left">
@@ -114,14 +105,15 @@
             </div>
         </div>
     </div>
-
     <!--Serviços-->
-    <div class="container my-5 py-2">
+    <div class="container my-5 py-2" id="areas-atuacao">
         <h2 class="text-center font-weight-bold my-5">Nossas areas de atuação</h2>
         <div class="row">
             <div data-aos="fade-up" data-aos-delay="0" data-aos-duration="1000" data-aos-once="true"
                 class="col-md-4 text-center">
-                <img src="img/smart-protect-1.jpg" alt="Anti-spam" class="mx-auto">
+                <a href="controlador-acesso.html">
+                    <img src="img/smart-protect-1.jpg" alt="Anti-spam" class="mx-auto">
+                </a>
                 <h4>Controle de Acesso</h4>
                 <p>Responsabilidade em recepções de de empresas, industrias ou condomínios</p>
             </div>
@@ -160,59 +152,6 @@
 
         </div>
     </div>
-    <!-- feature (skew background) 
-    <div class="jumbotron jumbotron-fluid feature" id="feature-first">
-        <div class="container my-5">
-            <div class="row justify-content-between text-center text-md-left">
-                <div data-aos="fade-right" data-aos-duration="1000" data-aos-once="true" class="col-md-6">
-                    <h2 class="font-weight-bold texto-decorationn">Deseja ingressar no mercado de trabalho?</h2>
-                    <p class="my-4 texto-decorationn">Aqui temos uma oportunidade pra você.
-                        <br>
-                    </p>
-                    <a href="#" class="btn my-4 font-weight-bold atlas-cta cta-blue"> Trabalhe conosco</a>
-                </div>
-                <div data-aos="fade-left" data-aos-duration="1000" data-aos-once="true"
-                    class="col-md-6 align-self-center">
-                    <img src="img/feature-1.png" alt="Take a look inside" class="mx-auto d-block">
-                </div>
-            </div>
-        </div>
-    </div>
-     feature (green background) 
-    <div class="jumbotron jumbotron-fluid feature" id="feature-last">
-        <div class="container">
-            <div class="row justify-content-between text-center text-md-left">
-                <div data-aos="fade-left" data-aos-duration="1000" data-aos-once="true" class="col-md-6 flex-md-last">
-                    <h2 class="font-weight-bold">Contrate nossos serviços</h2>
-                    <p class="my-4">
-                        Será um prazer atender você e sanar sua necessidade.
-                        <br> Deixe o pesado com o Grupo Inovar.
-                    </p>
-                    <a href="#" class="btn my-4 font-weight-bold atlas-cta cta-blue">Contate-nos</a>
-                </div>
-                <div data-aos="fade-right" data-aos-duration="1000" data-aos-once="true"
-                    class="col-md-6 align-self-center flex-md-first">
-                    <img src="img/feature-2.png" alt="Safe and reliable" class="mx-auto d-block">
-                </div>
-            </div>
-        </div>
-    </div>
--->
-    <!--
-    <div class="container my-5 py-2 text-center" id="price-table">
-        <h2 class="text-center font-weight-bold d-block mb-3">Não conhece o Grupo Inovar? Conheça sobre nós...</h2>
-        <div class="row">
-            <p class="my-4">
-                O Grupo Inovar é uma das mais tradicionais referências em
-                prestação de serviços para condomínios residenciais, condomínios
-                comerciais, indústrias, escritórios, clínicas e outros. Através de uma
-                filosofia dinâmica, nosso objetivo é fazer com que nossos parceiros se
-                destaquem em seus serviços.
-            </p>
-        </div>
-        <a href="#" class="btn my-4 font-weight-bold atlas-cta cta-green">Conheça os serviços que prestamos</a>
-    </div>
-    -->
     <!-- client -->
     <div class="jumbotron">
         <div class="slide-container swiper">
@@ -222,12 +161,12 @@
                         <div class="image-content">
                             <span class="overlay"></span>
                             <div class="card-image">
-                                <img src="img/quadrado-exemple.jpeg" alt="" class="card-img">
+                                <img src="img/img-carrossel/auxiliar-de-limpeza-crs.jpg" alt="" class="card-img">
                             </div>
                         </div>
                         <div class="card-content">
-                            <h3 class="name">Jardinagem 1</h3>
-                            <p class="description">Sou jardineiroooo Sou jardineiroooo </p>
+                            <h3 class="name">Limpeza</h3>
+                            <p class="description">Nossos auxiliares cuidarão do seu ambiente, tudo ficará limpo... </p>
                             <button class="buttoncard">Ver mais</button>
                         </div>
                     </div>
@@ -235,12 +174,12 @@
                         <div class="image-content">
                             <span class="overlay"></span>
                             <div class="card-image">
-                                <img src="img/quadrado-exemple.jpeg" alt="" class="card-img">
+                                <img src="img/img-carrossel/manutencao-predialcrs.jpg" alt="" class="card-img">
                             </div>
                         </div>
                         <div class="card-content">
-                            <h3 class="name">Jardinagem 2</h3>
-                            <p class="description">Sou jardineiroooo Sou jardineiroooo </p>
+                            <h3 class="name">Manutenção</h3>
+                            <p class="description">Nossos operadores farão da maneira mais simples, deixei com a gente...</p>
                             <button class="buttoncard">Ver mais</button>
                         </div>
                     </div>
@@ -248,12 +187,12 @@
                         <div class="image-content">
                             <span class="overlay"></span>
                             <div class="card-image">
-                                <img src="img/quadrado-exemple.jpeg" alt="" class="card-img">
+                                <img src="img/img-carrossel/vigilante-crs.jpg" alt="" class="card-img">
                             </div>
                         </div>
                         <div class="card-content">
-                            <h3 class="name">Jardinagem 3</h3>
-                            <p class="description">Sou jardineiroooo Sou jardineiroooo </p>
+                            <h3 class="name">Vigilância</h3>
+                            <p class="description">Seu ambiente estará sempre sob supervisão de nossos profissionais...</p>
                             <button class="buttoncard">Ver mais</button>
                         </div>
                     </div>
@@ -261,12 +200,12 @@
                         <div class="image-content">
                             <span class="overlay"></span>
                             <div class="card-image">
-                                <img src="img/quadrado-exemple.jpeg" alt="" class="card-img">
+                                <img src="img/img-carrossel/zelador-crs.jpg" alt="" class="card-img">
                             </div>
                         </div>
                         <div class="card-content">
-                            <h3 class="name">Jardinagem 4</h3>
-                            <p class="description">Sou jardineiroooo Sou jardineiroooo </p>
+                            <h3 class="name">Zeladoria</h3>
+                            <p class="description">Seu tempo é precioso. Cuidaremos dos detalhes, para que você não se preocupe...</p>
                             <button class="buttoncard">Ver mais</button>
                         </div>
                     </div>
@@ -274,12 +213,12 @@
                         <div class="image-content">
                             <span class="overlay"></span>
                             <div class="card-image">
-                                <img src="img/quadrado-exemple.jpeg" alt="" class="card-img">
+                                <img src="img/img-carrossel/controlador-de-acesso-2-crs.jpg" alt="" class="card-img">
                             </div>
                         </div>
                         <div class="card-content">
-                            <h3 class="name">Jardinagem 5</h3>
-                            <p class="description">Sou jardineiroooo Sou jardineiroooo </p>
+                            <h3 class="name">Controle de Acessso</h3>
+                            <p class="description">Saber quem entra em nosso estabelecimento é fundamental para nossa segurança...</p>
                             <button class="buttoncard">Ver mais</button>
                         </div>
                     </div>
@@ -287,12 +226,12 @@
                         <div class="image-content">
                             <span class="overlay"></span>
                             <div class="card-image">
-                                <img src="img/quadrado-exemple.jpeg" alt="" class="card-img">
+                                <img src="img/img-carrossel/auxiliar-manutencao-2-crs.png" alt="" class="card-img">
                             </div>
                         </div>
                         <div class="card-content">
-                            <h3 class="name">Jardinagem 6</h3>
-                            <p class="description">Sou jardineiroooo Sou jardineiroooo </p>
+                            <h3 class="name">Manutenção</h3>
+                            <p class="description">Nós nos preocupamos com a manutenção do seu ambiente de trabalho. Deixe conosco...</p>
                             <button class="buttoncard">Ver mais</button>
                         </div>
                     </div>
@@ -300,12 +239,12 @@
                         <div class="image-content">
                             <span class="overlay"></span>
                             <div class="card-image">
-                                <img src="img/quadrado-exemple.jpeg" alt="" class="card-img">
+                                <img src="img/img-carrossel/jardineiro.jpg" alt="" class="card-img">
                             </div>
                         </div>
                         <div class="card-content">
-                            <h3 class="name">Jardinagem 5</h3>
-                            <p class="description">Sou jardineiroooo Sou jardineiroooo </p>
+                            <h3 class="name">Jardinagem</h3>
+                            <p class="description">O jardim bem cuidado, do jeito que tem que ser... deixando o ambiente mais bonito.</p>
                             <button class="buttoncard">Ver mais</button>
                         </div>
                     </div>
@@ -313,23 +252,73 @@
                         <div class="image-content">
                             <span class="overlay"></span>
                             <div class="card-image">
-                                <img src="img/quadrado-exemple.jpeg" alt="" class="card-img">
+                                <img src="img/img-carrossel/zelador-2-crls.jpeg" alt="" class="card-img">
                             </div>
                         </div>
                         <div class="card-content">
-                            <h3 class="name">Jardinagem 6</h3>
-                            <p class="description">Sou jardineiroooo Sou jardineiroooo </p>
+                            <h3 class="name">Zelador</h3>
+                            <p class="description">O zelo e organização do local são impressindíveis para produção do negocio. </p>
                             <button class="buttoncard">Ver mais</button>
                         </div>
                     </div>
-                    
+                    <div class="card swiper-slide">
+                        <div class="image-content">
+                            <span class="overlay"></span>
+                            <div class="card-image">
+                                <img src="img/img-carrossel/auxiliar-limpeza-2-crs.jpg" alt="" class="card-img">
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="name">Limpeza</h3>
+                            <p class="description">O seu ambiente ficará sob nossa responsabilidade, deixe com a gente...</p>
+                            <button class="buttoncard">Ver mais</button>
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="image-content">
+                            <span class="overlay"></span>
+                            <div class="card-image">
+                                <img src="img/img-carrossel/controlador-de-acesso-crs.jpg" alt="" class="card-img">
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="name">Controle de Acesso</h3>
+                            <p class="description">O ir e vir do ambiente, estão sob nosso comando, promovendo segurança...</p>
+                            <button class="buttoncard">Ver mais</button>
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="image-content">
+                            <span class="overlay"></span>
+                            <div class="card-image">
+                                <img src="img/img-carrossel/jardineiro-1-crs.jpg" alt="" class="card-img">
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="name">Jardinagem</h3>
+                            <p class="description">Será um prazer cuidar do verde que circula seu negócio...  </p>
+                            <button class="buttoncard">Ver mais</button>
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="image-content">
+                            <span class="overlay"></span>
+                            <div class="card-image">
+                                <img src="img/img-carrossel/vigilante-2-crs.jpeg" alt="" class="card-img">
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="name">Vigilancia</h3>
+                            <p class="description">Você tem que se preocupar com o seu trabalho. A segurança deixe com a gente...</p>
+                            <button class="buttoncard">Ver mais</button>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="swiper-button-next swiper-navBtn"></div>
             <div class="swiper-button-prev swiper-navBtn"></div>
             <div class="swiper-pagination"></div>
         </div>
-
     </div>
     <!-- contact -->
     <div class="jumbotron jumbotron-fluid" id="contact" style="background-image: url(img/contact-bk.jpg);">
@@ -348,29 +337,71 @@
                     </ul>
                 </div>
                 <div class="col-md-6">
-                    <form>
+                    <form action="#">
+                        <div class="row">
+                            <div>
+                                <input type="hidden" id="to-contato" value="grupoinovar.sendemail@gmail.com">
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label for="nome-contato">Nome e Sobrenome</label>
+                                <input type="name" class="form-control" id="nome-contato" placeholder="Digite seu nome..." required>
+                            </div>
+                            
+                        </div>
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <label for="name">Nome e Sobrenome</label>
-                                <input type="name" class="form-control" id="name">
+                                <label for="celular-contato">DDD + Celular</label>
+                                <input type="tel" class="form-control" id="celular-contato" placeholder="Digite seu celular..." required>
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="Email">E-mail</label>
-                                <input type="email" class="form-control" id="Email">
+                                <label for="email-contato">E-mail</label>
+                                <input type="email" class="form-control" id="email-contato" placeholder="Digite seu email..." required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-12">
+                                <label for="subject-contato">Assunto</label>
+                                <input type="text" class="form-control" id="subject-contato" placeholder="Qual o assunto?" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="message">Mensagem</label>
-                            <textarea class="form-control" id="message" rows="3"></textarea>
+                            <label for="messageadd-contato">Mensagem</label>
+                            <textarea class="form-control" id="messageadd-contato" rows="3" placeholder="Deixe sua mensagem..." required></textarea>
                         </div>
-                        <button type="submit"
-                            class="btn font-weight-bold atlas-cta atlas-cta-wide cta-green my-3">Enviar</button>
+                        <button onclick="sendEmailContato();"class="btn font-weight-bold atlas-cta atlas-cta-wide cta-green my-3">Enviar</button>
+
+                        <script>
+                            function sendEmailContato() {
+                                (function () {
+                                    emailjs.init("gHb7oESI6hhQ6adcO"); //Chave publica do EMAILJS
+                                })();
+                                var params = {
+                                    //Esses dados não podem mudar
+                                    to: document.querySelector("#to-contato").value,
+                                    sendername: document.querySelector("#nome-contato").value,
+                                    subject: document.querySelector("#subject-contato").value,
+                                    replyto: document.querySelector("#email-contato").value,
+                                    //Dados pessoais
+                                    nome: document.querySelector("#nome-contato").value,
+                                    email: document.querySelector("#email-contato").value,
+                                    celular: document.querySelector("#celular-contato").value,
+                                    //Mensagem adicional
+                                    messageadd: document.querySelector("#messageadd-contato").value,
+                                };
+                                var serviceID = "service_xomalqp"; // Email Service ID
+                                var templateID = "template_39yy3wx"; // Email template ID
+                                emailjs.send(serviceID, templateID, params)
+                                    .then(res => {
+                                        alert("Sua mensagem foi enviada à diretoria do Grupo Inovar. Retornaremos em breve.");
+                                    })
+                                    .catch();
+                            }
+                        </script>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-
     <!-- copyright -->
     <div class="jumbotron jumbotron-fluid" id="copyright">
         <div class="container">
@@ -395,7 +426,6 @@
             </div>
         </div>
     </div>
-
     <!-- AOS -->
     <script src="js/aos.js"></script>
     <script>
