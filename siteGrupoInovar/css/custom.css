@@ -293,7 +293,7 @@ form .input-group input{
     color: #616161;
     transition: all 0.4s ease;
 }
-form .input-group select,form .input-group option{
+form select{
     width: 100%;
     background-color: rgba(255, 255, 255, 0.32);
     border-radius: 20px;
