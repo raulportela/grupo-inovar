@@ -43,8 +43,11 @@
             </h1>
             <p data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true"
                 class="lead text-white my-4">
-                Você está procurando uma oportunidade de trabalhar em uma empresa de terceirização que oferece serviços de qualidade, flexibilidade e valorização dos colaboradores? Então você está no lugar certo!<br>
-                Nós somos uma empresa de terceirização que atua em diversos segmentos, como limpeza, portaria, recepção, jardinagem, manutenção, entre outros. Temos como missão proporcionar soluções eficientes e personalizadas para os nossos clientes, garantindo a sua satisfação e fidelização.
+                Você está procurando uma oportunidade de trabalhar em uma empresa de terceirização que oferece serviços
+                de qualidade, flexibilidade e valorização dos colaboradores? Então você está no lugar certo!<br>
+                Nós somos uma empresa de terceirização que atua em diversos segmentos, como limpeza, portaria, recepção,
+                jardinagem, manutenção, entre outros. Temos como missão proporcionar soluções eficientes e
+                personalizadas para os nossos clientes, garantindo a sua satisfação e fidelização.
             </p>
             <a href="#" data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true"
                 class="btn my-4 font-weight-bold atlas-cta cta-blue">Inscreva-se à vaga </a>
@@ -62,6 +65,8 @@
                 <h2>Inscreva-se</h2>
                 <p>Escolha abaixo a vaga para se <strong>Inscrever</strong></p>
                 <form action="#">
+
+
                     <select name="vagasel" id="vagasel">
                         <option value="Selecione...">Selecione...</option>
                         <option value="Zelador">Zelador</option>
@@ -71,14 +76,9 @@
                         <option value="Controlador de acesso">Controlador de acesso</option>
                         <option value="Auxiliar de manutenção">Auxiliar de manutenção</option>
                     </select>
-                    <div class="input-group">
-                        
-                    </div>
 
                     <div class="input-group">
                         <input type="hidden" id="to" value="grupoinovar.sendemail@gmail.com">
-                        <input type="hidden" id="subject" value="VAGA - CONTROLADOR DE ACESSO">
-                        <input type="hidden" id="replyto" value="raul.p.p@hotmail.com">
                     </div>
                     <div class="input-group">
                         <label>Dados Pessoais</label>
@@ -158,22 +158,52 @@
                             const selectVaga = document.querySelector("#vagasel");
                             var valorVaga = selectVaga.value;
 
-                            
                             const selectGenero = document.querySelector("#genero");
                             var valorGenero = selectGenero.value;
-
                             const selectExperiencia = document.querySelector("#experiencia");
                             var valorExperiencia = selectExperiencia.value;
 
 
+                            if (valorVaga == null | valorVaga == "Selecione...") {
+                                alert("Selecione a vaga desejada.");
+                                return false
+                            } else if (document.querySelector("#nome").value == null | document.querySelector("#nome").value == "") {
+                                alert("Campo Nome deve ser preenchido.");
+                                return false
+                            } else if (document.querySelector("#idade").value == null | document.querySelector("#idade").value == "") {
+                                alert("Campo Idade deve ser preenchido.");
+                                return false
+                            } else if (valorGenero == null | valorGenero == "Selecione...") {
+                                alert("Selecione o respectivo Genero.");
+                                return false
+                            } else if (valorExperiencia == null | valorExperiencia == "Selecione...") {
+                                alert("Selecione se você possui experiência.");
+                                return false
+                            } else if (document.querySelector("#email").value == null | document.querySelector("#email").value == "") {
+                                alert("Campo E-mail deve ser preenchido.");
+                                return false
+                            } else if (document.querySelector("#celular").value == null | document.querySelector("#celular").value == "") {
+                                alert("Campo Celular deve ser preenchido.");
+                                return false
+                            } else if (document.querySelector("#rua").value == null | document.querySelector("#rua").value == "") {
+                                alert("Campo Rua deve ser preenchido.");
+                                return false
+                            } else if (document.querySelector("#bairro").value == null | document.querySelector("#bairro").value == "") {
+                                alert("Campo Bairro deve ser preenchido.");
+                                return false
+                            } else if (document.querySelector("#cidade").value == null | document.querySelector("#cidade").value == "") {
+                                alert("Campo Cidade deve ser preenchido.");
+                                return false
+                            } else if (document.querySelector("#estado").value == null | document.querySelector("#estado").value == "") {
+                                alert("Campo Estado deve ser preenchido.");
+                                return false
+                            }
                             var params = {
                                 //Esses dados não podem mudar
                                 to: document.querySelector("#to").value,
                                 sendername: document.querySelector("#nome").value,
-                                subject: document.querySelector("#subject").value,
-                                replyto: document.querySelector("#replyto").value,
-                                //Dados da Vaga
-                                vaga: valorVaga,
+                                subject: valorVaga,
+                                replyto: document.querySelector("#email").value,
                                 //Dados pessoais
                                 nome: document.querySelector("#nome").value,
                                 idade: document.querySelector("#idade").value,
@@ -230,7 +260,8 @@
                         </div>
                         <div class="card-content">
                             <h3 class="name">Manutenção</h3>
-                            <p class="description">Nossos operadores farão da maneira mais simples, deixei com a gente...</p>
+                            <p class="description">Nossos operadores farão da maneira mais simples, deixei com a
+                                gente...</p>
                             <button class="buttoncard">Ver mais</button>
                         </div>
                     </div>
@@ -243,7 +274,8 @@
                         </div>
                         <div class="card-content">
                             <h3 class="name">Vigilância</h3>
-                            <p class="description">Seu ambiente estará sempre sob supervisão de nossos profissionais...</p>
+                            <p class="description">Seu ambiente estará sempre sob supervisão de nossos profissionais...
+                            </p>
                             <button class="buttoncard">Ver mais</button>
                         </div>
                     </div>
@@ -256,7 +288,8 @@
                         </div>
                         <div class="card-content">
                             <h3 class="name">Zeladoria</h3>
-                            <p class="description">Seu tempo é precioso. Cuidaremos dos detalhes, para que você não se preocupe...</p>
+                            <p class="description">Seu tempo é precioso. Cuidaremos dos detalhes, para que você não se
+                                preocupe...</p>
                             <button class="buttoncard">Ver mais</button>
                         </div>
                     </div>
@@ -269,7 +302,8 @@
                         </div>
                         <div class="card-content">
                             <h3 class="name">Controle de Acessso</h3>
-                            <p class="description">Saber quem entra em nosso estabelecimento é fundamental para nossa segurança...</p>
+                            <p class="description">Saber quem entra em nosso estabelecimento é fundamental para nossa
+                                segurança...</p>
                             <button class="buttoncard">Ver mais</button>
                         </div>
                     </div>
@@ -282,7 +316,8 @@
                         </div>
                         <div class="card-content">
                             <h3 class="name">Manutenção</h3>
-                            <p class="description">Nós nos preocupamos com a manutenção do seu ambiente de trabalho. Deixe conosco...</p>
+                            <p class="description">Nós nos preocupamos com a manutenção do seu ambiente de trabalho.
+                                Deixe conosco...</p>
                             <button class="buttoncard">Ver mais</button>
                         </div>
                     </div>
@@ -295,7 +330,8 @@
                         </div>
                         <div class="card-content">
                             <h3 class="name">Jardinagem</h3>
-                            <p class="description">O jardim bem cuidado, do jeito que tem que ser... deixando o ambiente mais bonito.</p>
+                            <p class="description">O jardim bem cuidado, do jeito que tem que ser... deixando o ambiente
+                                mais bonito.</p>
                             <button class="buttoncard">Ver mais</button>
                         </div>
                     </div>
@@ -308,7 +344,8 @@
                         </div>
                         <div class="card-content">
                             <h3 class="name">Zelador</h3>
-                            <p class="description">O zelo e organização do local são impressindíveis para produção do negocio. </p>
+                            <p class="description">O zelo e organização do local são impressindíveis para produção do
+                                negocio. </p>
                             <button class="buttoncard">Ver mais</button>
                         </div>
                     </div>
@@ -321,7 +358,8 @@
                         </div>
                         <div class="card-content">
                             <h3 class="name">Limpeza</h3>
-                            <p class="description">O seu ambiente ficará sob nossa responsabilidade, deixe com a gente...</p>
+                            <p class="description">O seu ambiente ficará sob nossa responsabilidade, deixe com a
+                                gente...</p>
                             <button class="buttoncard">Ver mais</button>
                         </div>
                     </div>
@@ -334,7 +372,8 @@
                         </div>
                         <div class="card-content">
                             <h3 class="name">Controle de Acesso</h3>
-                            <p class="description">O ir e vir do ambiente, estão sob nosso comando, promovendo segurança...</p>
+                            <p class="description">O ir e vir do ambiente, estão sob nosso comando, promovendo
+                                segurança...</p>
                             <button class="buttoncard">Ver mais</button>
                         </div>
                     </div>
@@ -347,7 +386,7 @@
                         </div>
                         <div class="card-content">
                             <h3 class="name">Jardinagem</h3>
-                            <p class="description">Será um prazer cuidar do verde que circula seu negócio...  </p>
+                            <p class="description">Será um prazer cuidar do verde que circula seu negócio... </p>
                             <button class="buttoncard">Ver mais</button>
                         </div>
                     </div>
@@ -360,7 +399,8 @@
                         </div>
                         <div class="card-content">
                             <h3 class="name">Vigilancia</h3>
-                            <p class="description">Você tem que se preocupar com o seu trabalho. A segurança deixe com a gente...</p>
+                            <p class="description">Você tem que se preocupar com o seu trabalho. A segurança deixe com a
+                                gente...</p>
                             <button class="buttoncard">Ver mais</button>
                         </div>
                     </div>
@@ -370,7 +410,7 @@
             <div class="swiper-button-prev swiper-navBtn"></div>
         </div>
     </div>
-    <!-- contact -->
+    <!-- contact 
     <div class="jumbotron jumbotron-fluid" id="contact" style="background-image: url(img/contact-bk.jpg);">
         <div class="container my-5">
             <div class="row justify-content-between">
@@ -458,7 +498,7 @@
             </div>
         </div>
     </div>
-
+-->
     <!-- copyright -->
     <div class="jumbotron jumbotron-fluid" id="copyright">
         <div class="container">
@@ -483,6 +523,7 @@
             </div>
         </div>
     </div>
+
 
     <!-- AOS -->
     <script src="js/aos.js"></script>
