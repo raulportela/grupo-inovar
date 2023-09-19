@@ -17,7 +17,6 @@
     <!-- swipper -->
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
     <!-- EmailJS -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <!-- AOS -->
     <link rel="stylesheet" href="css/aos.css">
 </head>
@@ -38,20 +37,20 @@
             </header>
             <h1 data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true"
                 class="textoBanner display-3 text-white font-weight-bold my-5">
-                Grupo Inovar<br>
+                Grupo Inovar<br />
                 Trabalhe conosco
             </h1>
             <p data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true"
                 class="lead text-white my-4">
                 Você está procurando uma oportunidade de trabalhar em uma empresa de terceirização que oferece serviços
-                de qualidade, flexibilidade e valorização dos colaboradores? Então você está no lugar certo!<br>
+                de qualidade, flexibilidade e valorização dos colaboradores? Então você está no lugar certo!<br />
                 Nós somos uma empresa de terceirização que atua em diversos segmentos, como limpeza, portaria, recepção,
                 jardinagem, manutenção, entre outros. Temos como missão proporcionar soluções eficientes e
                 personalizadas para os nossos clientes, garantindo a sua satisfação e fidelização.
             </p>
-            <a href="#" data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true"
-                class="btn my-4 font-weight-bold atlas-cta cta-blue">Inscreva-se à vaga </a>
-            <a href="#" data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true"
+            <a href="#formulario-cadastro" data-aos="fade" data-aos-easing="linear" data-aos-duration="1000"
+                data-aos-once="true" class="btn my-4 font-weight-bold atlas-cta cta-blue">Preencha o curriculo</a>
+            <a href="index.html" data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true"
                 class="btn my-4 font-weight-bold atlas-cta cta-green">Conheça nossas areas</a>
         </div>
     </div>
@@ -64,21 +63,9 @@
             <div class="form-box">
                 <h2>Inscreva-se</h2>
                 <p>Escolha abaixo a vaga para se <strong>Inscrever</strong></p>
-                <form action="#">
-
-
-                    <select name="vagasel" id="vagasel">
-                        <option value="Selecione...">Selecione...</option>
-                        <option value="Zelador">Zelador</option>
-                        <option value="Vigilante">Vigilante</option>
-                        <option value="Jardineiro">Jardineiro</option>
-                        <option value="Auxiliar de limpeza">Auxiliar de limpeza</option>
-                        <option value="Controlador de acesso">Controlador de acesso</option>
-                        <option value="Auxiliar de manutenção">Auxiliar de manutenção</option>
-                    </select>
-
+                <form>
                     <div class="input-group">
-                        <input type="hidden" id="to" value="grupoinovar.sendemail@gmail.com">
+                        <input type="text" id="vaga" placeholder="Digite a vaga desejada" required>
                     </div>
                     <div class="input-group">
                         <label>Dados Pessoais</label>
@@ -92,22 +79,14 @@
                         <input type="text" id="idade" placeholder="Digite sua idade" required>
                     </div>
                     <div class="input-group">
-                        <label for="genero">Insira Genero:</label>
-                        <select name="genero" id="genero">
-                            <option value="Selecione...">Selecione...</option>
-                            <option value="Masculino">Masculino</option>
-                            <option value="Feminino">Feminino</option>
-                        </select>
+                        <label for="genero">Insira Genero</label>
+                        <input type="text" id="genero" placeholder="Ex: Masculino ou Feminino." required>
                     </div>
                     <div class="input-group">
-                        <label for="experiencia">Possui experiencia?</label>
-                        <select name="experiencia" id="experiencia">
-                            <option value="Selecione...">Selecione...</option>
-                            <option value="Sim">Sim</option>
-                            <option value="Nao">Não</option>
-                        </select>
+                        <label for="experiencia">Possui Experiencia?</label>
+                        <input type="text" id="experiencia" placeholder="Ex: Sim ou Não." required>
                     </div>
-                    <br>
+                    <br />
                     <div class="input-group">
                         <label>Dados de contato</label>
                     </div>
@@ -120,7 +99,7 @@
                         <label for="celular">DDD + Celular</label>
                         <input type="tel" id="celular" placeholder="Digite seu celular" required>
                     </div>
-                    <br>
+                    <br />
                     <div class="input-group">
                         <label>Dados Residenciais</label>
                     </div>
@@ -140,7 +119,7 @@
                         <label for="estado">Insira Estado</label>
                         <input type="text" id="estado" placeholder="Digite seu estado" required>
                     </div>
-                    <br>
+                    <br />
                     <div class="input-group">
                         <label>Deseja incluir alguma coisa? Diga-nos...</label>
                     </div>
@@ -148,85 +127,42 @@
                         <textarea id="messageadd" cols="30" rows="10" placeholder="Conta pra gente..."></textarea>
                     </div>
                     <div class="input-group">
-                        <button onclick="sendEmailInscricao();">Enviar Inscrição</button>
+                        <button onclick="sendEmail();">Enviar Inscrição</button>
                     </div>
+                    <script src="https://smtpjs.com/v3/smtp.js"></script>
                     <script>
-                        function sendEmailInscricao() {
-                            (function () {
-                                emailjs.init("gHb7oESI6hhQ6adcO"); //Chave publica do EMAILJS
-                            })();
-                            const selectVaga = document.querySelector("#vagasel");
-                            var valorVaga = selectVaga.value;
+                        function sendEmail() {
 
-                            const selectGenero = document.querySelector("#genero");
-                            var valorGenero = selectGenero.value;
-                            const selectExperiencia = document.querySelector("#experiencia");
-                            var valorExperiencia = selectExperiencia.value;
+                            let vaga = document.getElementById("vaga").value;
+                            let nome = document.getElementById("nome").value;
+                            let idade = document.getElementById("idade").value;
+                            let genero = document.getElementById("genero").value;
+                            let experiencia = document.getElementById("experiencia").value;
+                            let email = document.getElementById("email").value;
+                            let celular = document.getElementById("celular").value;
+                            let rua = document.getElementById("rua").value;
+                            let bairro = document.getElementById("bairro").value;
+                            let cidade = document.getElementById("cidade").value;
+                            let estado = document.getElementById("estado").value;
+                            let messsageadd = document.getElementById("messageadd").value;
 
 
-                            if (valorVaga == null | valorVaga == "Selecione...") {
-                                alert("Selecione a vaga desejada.");
-                                return false
-                            } else if (document.querySelector("#nome").value == null | document.querySelector("#nome").value == "") {
-                                alert("Campo Nome deve ser preenchido.");
-                                return false
-                            } else if (document.querySelector("#idade").value == null | document.querySelector("#idade").value == "") {
-                                alert("Campo Idade deve ser preenchido.");
-                                return false
-                            } else if (valorGenero == null | valorGenero == "Selecione...") {
-                                alert("Selecione o respectivo Genero.");
-                                return false
-                            } else if (valorExperiencia == null | valorExperiencia == "Selecione...") {
-                                alert("Selecione se você possui experiência.");
-                                return false
-                            } else if (document.querySelector("#email").value == null | document.querySelector("#email").value == "") {
-                                alert("Campo E-mail deve ser preenchido.");
-                                return false
-                            } else if (document.querySelector("#celular").value == null | document.querySelector("#celular").value == "") {
-                                alert("Campo Celular deve ser preenchido.");
-                                return false
-                            } else if (document.querySelector("#rua").value == null | document.querySelector("#rua").value == "") {
-                                alert("Campo Rua deve ser preenchido.");
-                                return false
-                            } else if (document.querySelector("#bairro").value == null | document.querySelector("#bairro").value == "") {
-                                alert("Campo Bairro deve ser preenchido.");
-                                return false
-                            } else if (document.querySelector("#cidade").value == null | document.querySelector("#cidade").value == "") {
-                                alert("Campo Cidade deve ser preenchido.");
-                                return false
-                            } else if (document.querySelector("#estado").value == null | document.querySelector("#estado").value == "") {
-                                alert("Campo Estado deve ser preenchido.");
-                                return false
-                            }
-                            var params = {
-                                //Esses dados não podem mudar
-                                to: document.querySelector("#to").value,
-                                sendername: document.querySelector("#nome").value,
-                                subject: valorVaga,
-                                replyto: document.querySelector("#email").value,
-                                //Dados pessoais
-                                nome: document.querySelector("#nome").value,
-                                idade: document.querySelector("#idade").value,
-                                genero: valorGenero,
-                                experiencia: valorExperiencia,
-                                //Dados de contato
-                                email: document.querySelector("#email").value,
-                                celular: document.querySelector("#celular").value,
-                                //dados de endereço
-                                rua: document.querySelector("#rua").value,
-                                bairro: document.querySelector("#bairro").value,
-                                cidade: document.querySelector("#cidade").value,
-                                estado: document.querySelector("#estado").value,
-                                //Mensagem adicional
-                                messageadd: document.querySelector("#messageadd").value,
-                            };
-                            var serviceID = "service_xomalqp"; // Email Service ID
-                            var templateID = "template_ujj5adk"; // Email template ID
-                            emailjs.send(serviceID, templateID, params)
-                                .then(res => {
-                                    alert("Insicrição para vaga feita com sucesso! Logo entraremos em contato com você.");
-                                })
-                                .catch();
+                            alert("para aquiiiii");
+
+                            let bodycorpo = "<br/><br/>REFERENCIA DE VAGA: " + vaga + "<br/><br/><br/>___________________________________________________________________________ <br/><br/>" + "DADOS PESSOAIS DO CANDIDATO <br/><br/>Nome: " + nome + "<br/><br/>Idade: " + idade + " anos <br/><br/>Genero: " + genero + "<br/><br/>Possui experiência: " + experiencia + "<br/><br/><br/>___________________________________________________________________________ <br/><br/>" + "DADOS DE CONTATO DO CANDIDATO <br/><br/>E-mail: " + email + "<br/><br/>Celular: " + celular + "<br/><br/><br/>___________________________________________________________________________ <br/><br/>" + "DADOS RESIDENCIAIS DO CANDIDATO <br/><br/>" + rua + ", " + bairro + "<br/><br/>Cidade: " + cidade + "-- Estado: " + estado + "<br/><br/><br/>___________________________________________________________________________ <br/><br/>" +"Mensagem adicional deixada pelo candidato<br/><br/>" + "'' " + messsageadd + " ''"
+
+                            alert(bodycorpo);
+                            
+                            Email.send({
+                                SecureToken: "2eb3d1d3-0733-4e33-b81c-2c162dfe58f1",
+                                To: "grupoinovar.sendemail@gmail.com",
+                                From: "grupoinovar.sendemail@gmail.com",
+                                Subject: "CANDIDATO À VAGA "+ vaga,
+                                Body: bodycorpo
+                            }).then(
+                                alert("Obrigado! Inscrição realizada com sucesso! Logo nosso time entrará em contato com você. "),
+                                window.location.href = "trabalhe-conosco.html"
+                            );
                         }
                     </script>
                 </form>
@@ -410,101 +346,12 @@
             <div class="swiper-button-prev swiper-navBtn"></div>
         </div>
     </div>
-    <!-- contact 
-    <div class="jumbotron jumbotron-fluid" id="contact" style="background-image: url(img/contact-bk.jpg);">
-        <div class="container my-5">
-            <div class="row justify-content-between">
-                <div class="col-md-6 text-white">
-                    <h2 class="font-weight-bold">Contate-nos</h2>
-                    <p class="my-4">
-                        Nos envie uma mensagem para registrar um elogio, fazer uma critica ou tirar uma dúvida.
-                        <br>Será um prazer atende-lô.
-                    </p>
-                    <ul class="list-unstyled">
-                        <li>Email : operacional@grupoinovarserv.com.br</li>
-                        <li>Telefone : 11 94031-5672</li>
-                        <li> R. Elísia Gonçalves Barcelos, 93 - Jd Reimberg, São Paulo - SP, 04845-280</li>
-                    </ul>
-                </div>
-                <div class="col-md-6">
-                    <form action="#">
-                        <div class="row">
-                            <div>
-                                <input type="hidden" id="to-contato" value="grupoinovar.sendemail@gmail.com">
-                            </div>
-                            <div class="form-group col-md-12">
-                                <label for="nome-contato">Nome e Sobrenome</label>
-                                <input type="name" class="form-control" id="nome-contato"
-                                    placeholder="Digite seu nome..." required>
-                            </div>
-
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-md-6">
-                                <label for="celular-contato">DDD + Celular</label>
-                                <input type="tel" class="form-control" id="celular-contato"
-                                    placeholder="Digite seu celular..." required>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="email-contato">E-mail</label>
-                                <input type="email" class="form-control" id="email-contato"
-                                    placeholder="Digite seu email..." required>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-md-12">
-                                <label for="subject-contato">Assunto</label>
-                                <input type="text" class="form-control" id="subject-contato"
-                                    placeholder="Qual o assunto?" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="messageadd-contato">Mensagem</label>
-                            <textarea class="form-control" id="messageadd-contato" rows="3"
-                                placeholder="Deixe sua mensagem..." required></textarea>
-                        </div>
-                        <button onclick="sendEmailContato();"
-                            class="btn font-weight-bold atlas-cta atlas-cta-wide cta-green my-3">Enviar</button>
-
-                        <script>
-                            function sendEmailContato() {
-                                (function () {
-                                    emailjs.init("gHb7oESI6hhQ6adcO"); //Chave publica do EMAILJS
-                                })();
-                                var params = {
-                                    //Esses dados não podem mudar
-                                    to: document.querySelector("#to-contato").value,
-                                    sendername: document.querySelector("#nome-contato").value,
-                                    subject: document.querySelector("#subject-contato").value,
-                                    replyto: document.querySelector("#email-contato").value,
-                                    //Dados pessoais
-                                    nome: document.querySelector("#nome-contato").value,
-                                    email: document.querySelector("#email-contato").value,
-                                    celular: document.querySelector("#celular-contato").value,
-                                    //Mensagem adicional
-                                    messageadd: document.querySelector("#messageadd-contato").value,
-                                };
-                                var serviceID = "service_xomalqp"; // Email Service ID
-                                var templateID = "template_39yy3wx"; // Email template ID
-                                emailjs.send(serviceID, templateID, params)
-                                    .then(res => {
-                                        alert("Sua mensagem foi enviada à diretoria do Grupo Inovar. Retornaremos em breve.");
-                                    })
-                                    .catch();
-                            }
-                        </script>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
--->
     <!-- copyright -->
     <div class="jumbotron jumbotron-fluid" id="copyright">
         <div class="container">
             <div class="row justify-content-between">
                 <div class="col-md-6 text-white align-self-center text-center text-md-left my-2">
-                    Copyright © 2023 | São Paulo - SP.
+                    Copyright © 2023 || São Paulo - SP.
                 </div>
                 <div class="col-md-6 align-self-center text-center text-md-right my-2" id="social-media">
                     <a href="#" class="d-inline-block text-center ml-2">

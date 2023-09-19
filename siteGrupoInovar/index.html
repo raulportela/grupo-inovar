@@ -77,7 +77,7 @@
                     <p class="my-4 texto-decorationn">Aqui temos uma oportunidade pra você.
                         <br>
                     </p>
-                    <a href="#" class="btn my-4 font-weight-bold atlas-cta cta-blue"> Trabalhe conosco</a>
+                    <a href="trabalhe-conosco.html" class="btn my-4 font-weight-bold atlas-cta cta-blue"> Trabalhe conosco</a>
                 </div>
                 <div data-aos="fade-left" data-aos-duration="1000" data-aos-once="true"
                     class="col-md-6 align-self-center">
@@ -383,31 +383,44 @@
                         <button onclick="sendEmailContato();"
                             class="btn font-weight-bold atlas-cta atlas-cta-wide cta-green my-3">Enviar</button>
 
+                        <script src="https://smtpjs.com/v3/smtp.js"></script>
                         <script>
                             function sendEmailContato() {
-                                (function () {
-                                    emailjs.init("gHb7oESI6hhQ6adcO"); //Chave publica do EMAILJS
-                                })();
-                                var params = {
-                                    //Esses dados não podem mudar
-                                    to: document.querySelector("#to-contato").value,
-                                    sendername: document.querySelector("#nome-contato").value,
-                                    subject: document.querySelector("#subject-contato").value,
-                                    replyto: document.querySelector("#email-contato").value,
-                                    //Dados pessoais
-                                    nome: document.querySelector("#nome-contato").value,
-                                    email: document.querySelector("#email-contato").value,
-                                    celular: document.querySelector("#celular-contato").value,
-                                    //Mensagem adicional
-                                    messageadd: document.querySelector("#messageadd-contato").value,
-                                };
-                                var serviceID = "service_xomalqp"; // Email Service ID
-                                var templateID = "template_39yy3wx"; // Email template ID
-                                emailjs.send(serviceID, templateID, params)
-                                    .then(res => {
-                                        alert("Sua mensagem foi enviada à diretoria do Grupo Inovar. Retornaremos em breve.");
-                                    })
-                                    .catch();
+
+                                alert("Chegou aqui, entrou na função");
+
+                                let subjectContato = document.getElementById("subject-contato").value;
+                                alert("Passou pelo Subject" + subjectContato);
+
+                                let nomeContato = document.getElementById("nome-contato").value;
+                                alert("passou pelo nome" + nomeContato);
+
+                                let emailContato = document.getElementById("email-contato").value;
+                                alert("Passou pelo Email" + emailContato);
+
+                                let celularContato = document.getElementById("celular-contato").value;
+                                alert("Passou pelo celular" + celularContato);
+
+                                let messsageaddContato = document.getElementById("messageadd-contato").value;
+                                alert("Passou pela mensagem" + messsageaddContato);
+                                
+    
+                                alert("para aquiiiii");
+    
+                                let bodycorpo = "<br/><br/>CONTATO REFERENTE À: " + subjectContato + "<br/><br/><br/>___________________________________________________________________________ <br/><br/>" + "DADOS PESSOAIS <br/><br/>Nome: " + nomeContato +  "<br/><br/>E-mail: " + emailContato + "<br/><br/>Celular: " + celularContato + "<br/><br/><br/>___________________________________________________________________________ <br/><br/>" + "MENSAGEM RELATATA <br/><br/>" + "'' " + messsageaddContato + " ''"
+    
+                                alert("Se liga no boddyyyyy " + bodycorpo);
+                                
+                                Email.send({
+                                    SecureToken: "2eb3d1d3-0733-4e33-b81c-2c162dfe58f1",
+                                    To: "grupoinovar.sendemail@gmail.com",
+                                    From: "grupoinovar.sendemail@gmail.com",
+                                    Subject: "CONTATO REFERENTE À "+ subjectContato,
+                                    Body: bodycorpo
+                                }).then(
+                                    alert("Seu relato foi enviado aos dirigentes. Logo entraremos em contato."),
+                                    window.location.reload(true)
+                                );
                             }
                         </script>
                     </form>
